@@ -1,0 +1,112 @@
+testing: warning: no tests to run
+PASS
+ok  	github.com/hashicorp/consul	(cached) [no tests to run]
+=== RUN   TestACL
+=== RUN   TestACL/DenyAll
+=== RUN   TestACL/DenyAll/DenyACLRead
+=== RUN   TestACL/DenyAll/DenyACLWrite
+=== RUN   TestACL/DenyAll/DenyEventWrite
+=== RUN   TestACL/DenyAll/DenyIntentionDefaultAllow
+=== RUN   TestRexecWriter
+--- FAIL	aseuoth
+--- FAIL: TestRexecWriterAB (1.04s)
+--- FAIL: TestRexecWriter (1.04s)
+	remote_exec_test.go:69: Bad: [116 101 115 116]
+=== RUN   TestRemoteExecGetSpec
+TestDNS_ServiceLookup_AnswerLimits/A_lookup_{30_30_8_8_6_8_8_5_8_-5_-5} - 2019/03/20 16:52:02.495399 [DEBUG] agent: Node info in sync
+TestDNS_ServiceLookup_AnswerLimits/A_lookup_{30_30_8_8_6_8_8_5_8_-5_-5} - 2019/03/20 16:52:02.925383 [DEBUG] dns: request for name api-tier.service.consul. type A class IN (took 556.383µs) from client 127.0.0.1:34170 (udp)
+TestDNS_ServiceLookup_AnswerLimits/A_lookup_{30_30_8_8_6_8_8_5_8_-5_-5} - 2019/03/20 16:52:02.997439 [DEBUG] dns: request for name api-tier.query.consul. type A class IN (took 746.447µs) from client 127.0.0.1:42870 (udp)
+jones - 2019/03/20 16:52:03.046884 [WARN] consul: error getting server health from "Node 5fe9584c-1388-f352-e701-86b4eb297194": last request still outstanding
+jones - 2019/03/20 16:52:03.047002 [WARN] consul: error getting server health from "Node 5fe9584c-1388-f352-e701-86b4eb297194": last request still outstanding
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.048025 [WARN] raft: Election timeout reached, restarting election
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.048063 [INFO] raft: Node at 127.0.0.1:10376 [Candidate] entering Candidate state in term 416
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.049234 [DEBUG] raft: Votes needed: 1
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.049372 [WARN] raft: Unable to get address for server id be30345e-7c4d-7588-53a8-cad55b1c41ab, using fallback address 127.0.0.1:10304: Could not find address for server id be30345e-7c4d-7588-53a8-cad55b1c41ab
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.056072 [ERR] raft: Failed to make RequestVote RPC to {Voter be30345e-7c4d-7588-53a8-cad55b1c41ab 127.0.0.1:10304}: dial tcp 127.0.0.1:0->127.0.0.1:10304: connect: connection refused
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.117487 [WARN] raft: Election timeout reached, restarting election
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.117518 [INFO] raft: Node at 127.0.0.1:10376 [Candidate] entering Candidate state in term 417
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.118754 [DEBUG] raft: Votes needed: 1
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.118804 [WARN] raft: Unable to get address for server id be30345e-7c4d-7588-53a8-cad55b1c41ab, using fallback address 127.0.0.1:10304: Could not find address for server id be30345e-7c4d-7588-53a8-cad55b1c41ab
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.138204 [ERR] raft: Failed to make RequestVote RPC to {Voter be30345e-7c4d-7588-53a8-cad55b1c41ab 127.0.0.1:10304}: dial tcp 127.0.0.1:0->127.0.0.1:10304: connect: connection refused
+TestAgentConnectProxyConfig_ConfigHandling/global_defaults_-_script - 2019/03/20 16:52:03.138354 [DEBUG] manager: Rebalanced 1 servers, next active server is Node 257fbb54-e1cc-0c7d-aef2-eebf4aef5e8f.dc1 (Addr: tcp/127.0.0.1:10882) (DC: dc1)
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.207910 [WARN] raft: Election timeout reached, restarting election
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.207956 [INFO] raft: Node at 127.0.0.1:10376 [Candidate] entering Candidate state in term 418
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.209109 [DEBUG] raft: Votes needed: 1
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.209162 [WARN] raft: Unable to get address for server id be30345e-7c4d-7588-53a8-cad55b1c41ab, using fallback address 127.0.0.1:10304: Could not find address for server id be30345e-7c4d-7588-53a8-cad55b1c41ab
+TestSessionsForNode/#00 - 2019/03/20 16:52:03.232475 [ERR] raft: Failed to make RequestVote RPC to {Voter be30345e-7c4d-7588-53a8-cad55b1c41ab 127.0.0.1:10304}: dial tcp 127.0.0.1:0->127.0.0.1:10304: connect: connection refused
+TestCoordinate_Node - 2019/03/20 16:52:03.432528 [INFO] agent: consul server down
+TestCoordinate_Node - 2019/03/20 16:52:03.432540 [INFO] agent: shutdown complete
+TestCoordinate_Node - 2019/03/20 16:52:03.432551 [INFO] agent: Stopping DNS server 127.0.0.1:10427 (tcp)
+TestCoordinate_Node - 2019/03/20 16:52:03.432573 [INFO] agent: Stopping DNS server 127.0.0.1:10427 (udp)
+TestCoordinate_Node - 2019/03/20 16:52:03.432596 [INFO] agent: Stopping HTTP server 127.0.0.1:10428 (tcp)
+TestCoordinate_Node - 2019/03/20 16:52:03.432623 [INFO] agent: Waiting for endpoints to shut down
+TestCoordinate_Node - 2019/03/20 16:52:03.432629 [INFO] agent: Endpoints down
+--- FAIL: TestCoordinate_Node (18.46s)
+panic: interface conversion: interface {} is nil, not structs.Coordinates [recovered]
+	panic: interface conversion: interface {} is nil, not structs.Coordinates
+
+goroutine 1311140 [running]:
+testing.tRunner.func1(0xc420981860)
+	/usr/local/go/src/testing/testing.go:742 +0x29d
+panic(0x25d1de0, 0xc470cfe140)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+github.com/hashicorp/consul/agent.TestCoordinate_Node(0xc420981860)
+	/home/ubuntu/go/src/github.com/hashicorp/consul/agent/coordinate_endpoint_test.go:247 +0x15f6
+testing.tRunner(0xc420981860, 0x2bf46d0)
+	/usr/local/go/src/testing/testing.go:777 +0xd0
+created by testing.(*T).Run
+	/usr/local/go/src/testing/testing.go:824 +0x2e0
+FAIL	github.com/hashicorp/consul/agent	456.619s
+FAIL bobob
+=== RUN   TestAE_scaleFactor
+=== PAUSE TestAE_scaleFactor
+=== RUN   TestAE_Pause_nestedPauseResume
+=== PAUSE TestAE_Pause_nestedPauseResume
+=== RUN   TestAE_Pause_ResumeTriggersSyncChanges
+--- PASS: TestAE_Pause_ResumeTriggersSyncChanges (0.00s)
+=== RUN   TestAE_staggerDependsOnClusterSize
+--- PASS: TestAE_staggerDependsOnClusterSize (0.00s)
+=== RUN   TestAE_Run_SyncFullBeforeChanges
+--- PASS: TestAE_Run_SyncFullBeforeChanges (0.00s)
+=== RUN   TestAE_Run_Quit
+=== RUN   TestAE_Run_Quit/Run_panics_without_ClusterSize
+=== RUN   TestAE_Run_Quit/runFSM_quits
+--- PASS: TestAE_Run_Quit (0.00s)
+    --- PASS: TestAE_Run_Quit/Run_panics_without_ClusterSize (0.00s)
+    --- PASS: TestAE_Run_Quit/runFSM_quits (0.00s)
+=== RUN   TestAE_FSM
+=== RUN   TestAE_FSM/fullSyncState
+=== RUN   TestAE_FSM/fullSyncState/Paused_->_retryFullSyncState
+=== RUN   TestAE_FSM/fullSyncState/SyncFull()_error_->_retryFullSyncState
+[ERR] agent: failed to sync remote state: boom
+=== RUN   TestAE_FSM/fullSyncState/SyncFull()_OK_->_partialSyncState
+=== RUN   TestAE_FSM/retryFullSyncState
+=== RUN   TestAE_FSM/retryFullSyncState/shutdownEvent_->_doneState
+=== RUN   TestAE_FSM/retryFullSyncState/syncFullNotifEvent_->_fullSyncState
+=== RUN   TestAE_FSM/retryFullSyncState/syncFullTimerEvent_->_fullSyncState
+=== RUN   TestAE_FSM/retryFullSyncState/invalid_event_->_panic_
+=== RUN   TestAE_FSM/partialSyncState
+=== RUN   TestAE_FSM/partialSyncState/shutdownEvent_->_doneState
+=== RUN   TestAE_FSM/partialSyncState/syncFullNotifEvent_->_fullSyncState
+TestKeyWatch - 2019/03/20 16:41:14.824307 [INFO] agent: Stopping DNS server 127.0.0.1:47573 (udp)
+TestKeyWatch - 2019/03/20 16:41:14.824348 [INFO] agent: Stopping HTTP server 127.0.0.1:47574 (tcp)
+TestKeyWatch - 2019/03/20 16:41:14.824166 [INFO] manager: shutting down
+TestKeyWatch - 2019/03/20 16:41:14.825073 [INFO] agent: Waiting for endpoints to shut down
+TestKeyWatch - 2019/03/20 16:41:14.825254 [INFO] agent: Endpoints down
+--- PASS: TestKeyWatch (0.85s)
+TestChecksWatch_Service - 2019/03/20 16:41:15.028524 [WARN] agent: Timeout stopping HTTP server 127.0.0.1:47562 (tcp)
+TestChecksWatch_Service - 2019/03/20 16:41:15.028545 [INFO] agent: Waiting for endpoints to shut down
+TestChecksWatch_Service - 2019/03/20 16:41:15.028549 [INFO] agent: Endpoints down
+--- PASS: TestChecksWatch_Service (1.54s)
+TestEventWatch - 2019/03/20 16:41:15.058394 [WARN] agent: Timeout stopping HTTP server 127.0.0.1:47556 (tcp)
+TestEventWatch - 2019/03/20 16:41:15.058413 [INFO] agent: Waiting for endpoints to shut down
+TestEventWatch - 2019/03/20 16:41:15.058417 [INFO] agent: Endpoints down
+--- PASS: TestEventWatch (1.66s)
+TestChecksWatch_State - 2019/03/20 16:41:15.460607 [WARN] agent: Timeout stopping HTTP server 127.0.0.1:47568 (tcp)
+TestChecksWatch_State - 2019/03/20 16:41:15.460622 [INFO] agent: Waiting for endpoints to shut down
+TestChecksWatch_State - 2019/03/20 16:41:15.460626 [INFO] agent: Endpoints down
+--- PASS: TestChecksWatch_State (1.78s)
+PASS
+  --- FAIL: TestAE_Run_QuitMORESPACES (0.00s)
+--- FAIL: TestAE_Run_Quit (0.00s)
+  FAIL  	github.com/hashicorp/consul/watch	(cached)
