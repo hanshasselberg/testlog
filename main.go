@@ -25,7 +25,7 @@ func main() {
 				fmt.Fprintln(os.Stderr, fmt.Sprintf("Thought it would be a failed test, but formatted strangely: %s", l))
 				continue
 			}
-			current = append(current, parts[2])
+			current = append(current, strings.Split(parts[2], "/")[0])
 		} else if strings.HasPrefix(l, PACKAGE_PREFIX) {
 			parts := strings.Split(l, "\t")
 			if len(parts) < 2 {
@@ -41,7 +41,7 @@ func main() {
 	}
 	for p, ts := range tests {
 		for _, t := range ts {
-			fmt.Printf("go test -tags 'ent prem' %s -run %s\n", p, t)
+			fmt.Printf("go test -tags 'ent prem' %s -run '^%s$'\n", p, t)
 		}
 	}
 }

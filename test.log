@@ -10,6 +10,7 @@ ok  	github.com/hashicorp/consul	(cached) [no tests to run]
 === RUN   TestRexecWriter
 --- FAIL	aseuoth
 --- FAIL: TestRexecWriterAB (1.04s)
+--- FAIL: TestAgent_Service/blocking_fetch_interrupted_by_reload_shouldn't_404_-_no_change (1.04s)
 --- FAIL: TestRexecWriter (1.04s)
 	remote_exec_test.go:69: Bad: [116 101 115 116]
 === RUN   TestRemoteExecGetSpec
