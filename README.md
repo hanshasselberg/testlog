@@ -15,7 +15,7 @@ go test github.com/hashicorp/consul/watch -run TestAE_Run_QuitMORESPACES
 go test github.com/hashicorp/consul/watch -run TestAE_Run_Quit
 ```
 
-or when you have it in your PATH:
+or when you have it in your `PATH` and want to run the test right away:
 
 ```
 $ cat test.log | testlog | bash
