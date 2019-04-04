@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -14,6 +15,12 @@ const (
 )
 
 func main() {
+	ent := flag.Bool("ent", false, "ent build")
+	flag.Parse()
+	tags := ""
+	if *ent {
+		tags = "-tags 'ent prem' "
+	}
 	scanner := bufio.NewScanner(os.Stdin)
 	tests := map[string][]string{}
 	current := []string{}
@@ -41,7 +48,7 @@ func main() {
 	}
 	for p, ts := range tests {
 		for _, t := range ts {
-			fmt.Printf("go test -tags 'ent prem' %s -run '^%s$'\n", p, t)
+			fmt.Printf("go test %s%s -run '^%s$'\n", tags, p, t)
 		}
 	}
 }
