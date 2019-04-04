@@ -6,7 +6,6 @@ Generates list of individual test to run from `test.log`:
 
 ```
 $ cat test.log | go run main.go
-testlog git:(master) ✗ cat test.log | go run main.go
 Thought it would be a failed test, but formatted strangely: --- FAIL	aseuoth
 Thought it would be a failed package, but formatted strangely: FAIL bobob
 go test github.com/hashicorp/consul/agent -run TestRexecWriterAB
