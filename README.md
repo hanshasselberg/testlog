@@ -2,7 +2,7 @@
 
 ## Usage
 
-Generates list of individual test to run from enterprise `test.log`:
+Generates list of individual test to run from `test.log`:
 
 ```
 $ cat test.log | go run main.go
