@@ -47,8 +47,12 @@ func main() {
 		log.Println(err)
 	}
 	for p, ts := range tests {
+		beginning := fmt.Sprintf("go test %s%s", tags, p)
+		if len(ts) == 0 {
+			fmt.Printf("%s\n", beginning)
+		}
 		for _, t := range ts {
-			fmt.Printf("go test %s%s -run '^%s$'\n", tags, p, t)
+			fmt.Printf("%s -run '^%s$'\n", beginning, t)
 		}
 	}
 }

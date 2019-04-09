@@ -111,3 +111,4 @@ PASS
   --- FAIL: TestAE_Run_QuitMORESPACES (0.00s)
 --- FAIL: TestAE_Run_Quit (0.00s)
   FAIL  	github.com/hashicorp/consul/watch	(cached)
+  FAIL  	github.com/hashicorp/command/lock
