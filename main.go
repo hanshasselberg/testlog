@@ -39,7 +39,8 @@ func main() {
 				fmt.Fprintln(os.Stderr, fmt.Sprintf("Thought it would be a failed package, but formatted strangely: %s", l))
 				continue
 			}
-			tests[parts[1]] = current
+			name := strings.Split(parts[1], " ")[0]
+			tests[name] = current
 			current = []string{}
 		}
 	}
