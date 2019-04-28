@@ -16,32 +16,37 @@ const (
 
 func main() {
 	ent := flag.Bool("ent", false, "ent build")
+	debug := flag.Bool("debug", false, "debug output to stderr")
 	flag.Parse()
 	tags := ""
 	if *ent {
 		tags = "-tags 'ent prem' "
 	}
 	scanner := bufio.NewScanner(os.Stdin)
-	tests := map[string][]string{}
-	current := []string{}
+	tests := map[string]map[string]struct{}{}
+	current := map[string]struct{}{}
 	for scanner.Scan() {
 		l := strings.TrimSpace(scanner.Text())
 		if strings.HasPrefix(l, TEST_PREFIX) {
 			parts := strings.Split(l, " ")
 			if len(parts) < 3 {
-				fmt.Fprintln(os.Stderr, fmt.Sprintf("Thought it would be a failed test, but formatted strangely: %s", l))
+				if *debug {
+					fmt.Fprintln(os.Stderr, fmt.Sprintf("Thought it would be a failed test, but formatted strangely: %s", l))
+				}
 				continue
 			}
-			current = append(current, strings.Split(parts[2], "/")[0])
+			current[strings.Split(parts[2], "/")[0]] = struct{}{}
 		} else if strings.HasPrefix(l, PACKAGE_PREFIX) {
 			parts := strings.Split(l, "\t")
 			if len(parts) < 2 {
-				fmt.Fprintln(os.Stderr, fmt.Sprintf("Thought it would be a failed package, but formatted strangely: %s", l))
+				if *debug {
+					fmt.Fprintln(os.Stderr, fmt.Sprintf("Thought it would be a failed package, but formatted strangely: %s", l))
+				}
 				continue
 			}
 			name := strings.Split(parts[1], " ")[0]
 			tests[name] = current
-			current = []string{}
+			current = map[string]struct{}{}
 		}
 	}
 	if err := scanner.Err(); err != nil {
@@ -52,7 +57,7 @@ func main() {
 		if len(ts) == 0 {
 			fmt.Printf("%s\n", beginning)
 		}
-		for _, t := range ts {
+		for t := range ts {
 			fmt.Printf("%s -run '^%s$'\n", beginning, t)
 		}
 	}
