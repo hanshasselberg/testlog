@@ -15,12 +15,12 @@ const (
 )
 
 func main() {
-	ent := flag.Bool("ent", false, "ent build")
+	tags := flag.String("tags", "", "tags")
 	debug := flag.Bool("debug", false, "debug output to stderr")
 	flag.Parse()
-	tags := ""
-	if *ent {
-		tags = "-tags 'ent prem' "
+	this := ""
+	if *tags != "" {
+		this = fmt.Sprintf("-tags %q ", *tags)
 	}
 	scanner := bufio.NewScanner(os.Stdin)
 	tests := map[string]map[string]struct{}{}
@@ -53,7 +53,7 @@ func main() {
 		log.Println(err)
 	}
 	for p, ts := range tests {
-		beginning := fmt.Sprintf("go test %s%s", tags, p)
+		beginning := fmt.Sprintf("go test %s%s", this, p)
 		if len(ts) == 0 {
 			fmt.Printf("%s\n", beginning)
 		}
