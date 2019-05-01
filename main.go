@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strings"
 )
 
@@ -52,12 +53,22 @@ func main() {
 	if err := scanner.Err(); err != nil {
 		log.Println(err)
 	}
-	for p, ts := range tests {
+	packages := []string{}
+	for k := range tests {
+		packages = append(packages, k)
+	}
+	sort.Strings(packages)
+	for _, p := range packages {
+		sortedTests := []string{}
+		for t := range tests[p] {
+			sortedTests = append(sortedTests, t)
+		}
+		sort.Strings(sortedTests)
 		beginning := fmt.Sprintf("go test %s%s", this, p)
-		if len(ts) == 0 {
+		if len(sortedTests) == 0 {
 			fmt.Printf("%s\n", beginning)
 		}
-		for t := range ts {
+		for _, t := range sortedTests {
 			fmt.Printf("%s -run '^%s$'\n", beginning, t)
 		}
 	}
