@@ -21,4 +21,4 @@ $ cat test.log | testlog | bash
 
 ## Features
 
-Errors are written to STDERR and it supports a flag for `-ent`.
+Errors are written to STDERR and it supports providing flags with `-flags`.
