@@ -36,7 +36,7 @@ func main() {
 				}
 				continue
 			}
-			current[strings.Split(parts[2], "/")[0]] = struct{}{}
+			current[parts[2]] = struct{}{}
 		} else if strings.HasPrefix(l, PACKAGE_PREFIX) {
 			parts := strings.Split(l, "\t")
 			if len(parts) < 2 {
