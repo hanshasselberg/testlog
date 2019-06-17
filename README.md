@@ -19,6 +19,10 @@ or when you have it in your `PATH` and want to run the test right away:
 $ cat test.log | testlog | bash
 ```
 
+```
+$ cat test.log | testlog -tags 'consulent consulprem' | bash
+```
+
 ## Features
 
 Errors are written to STDERR and it supports providing flags with `-flags`.
