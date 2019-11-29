@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"sort"
 	"strings"
@@ -24,6 +23,11 @@ func main() {
 		this = fmt.Sprintf("-tags %q ", *tags)
 	}
 	scanner := bufio.NewScanner(os.Stdin)
+	max := bufio.MaxScanTokenSize * 200
+
+	// fmt.Fprintln(os.Stderr, fmt.Sprintf("max buffer: %d", max))
+	buf := make([]byte, max)
+	scanner.Buffer(buf, max)
 	tests := map[string]map[string]struct{}{}
 	current := map[string]struct{}{}
 	for scanner.Scan() {
@@ -51,8 +55,9 @@ func main() {
 		}
 	}
 	if err := scanner.Err(); err != nil {
-		log.Println(err)
+		fmt.Fprintln(os.Stderr, err)
 	}
+
 	packages := []string{}
 	for k := range tests {
 		packages = append(packages, k)
